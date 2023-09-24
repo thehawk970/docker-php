@@ -1,4 +1,4 @@
-name: ci
+name: Build caddy image
 
 on:
   push:
@@ -25,5 +25,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v5
         with:
+          context: .
+          target: caddy
           push: true
-          tags: thehawk970/php:latest
+          tags: thehawk970/caddy:latest

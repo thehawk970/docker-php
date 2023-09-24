@@ -1,6 +1,6 @@
 #syntax=docker/dockerfile:1.4
 
-FROM php:8.2-fpm-alpine
+FROM php:8.2-fpm-alpine as php
 
 # Allow to use development versions of Symfony
 ARG STABILITY="stable"
@@ -61,3 +61,9 @@ ENV COMPOSER_ALLOW_SUPERUSER=1
 ENV PATH="${PATH}:/root/.composer/vendor/bin"
 
 COPY --from=composer/composer:2-bin --link /composer /usr/bin/composer
+
+FROM caddy:2.7-builder-alpine AS caddy
+
+RUN xcaddy build \
+	--with github.com/dunglas/vulcain \
+	--with github.com/dunglas/mercure
