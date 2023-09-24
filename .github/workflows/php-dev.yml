@@ -27,4 +27,5 @@ jobs:
         with:
           target: php-dev
           push: true
+          platforms: linux/amd64,linux/arm64,linux/amd32,linux/arm32
           tags: thehawk970/php-xdebug:latest
