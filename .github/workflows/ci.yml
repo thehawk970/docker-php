@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: thehawk970/php:8.2
+          tags: thehawk970/php:latest
