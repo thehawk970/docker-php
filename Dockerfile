@@ -67,3 +67,9 @@ FROM caddy:2.7-builder-alpine AS caddy
 RUN xcaddy build \
 	--with github.com/dunglas/vulcain \
 	--with github.com/dunglas/mercure
+
+FROM php as php-dev
+RUN set -eux; \
+	install-php-extensions \
+    	xdebug \
+    ;

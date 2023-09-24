@@ -1,4 +1,4 @@
-name: Build php image
+name: Build php image with xdebug
 
 on:
   push:
@@ -25,6 +25,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          target: php
+          target: php-dev
           push: true
-          tags: thehawk970/php:latest
+          tags: thehawk970/php-xdebug:latest
