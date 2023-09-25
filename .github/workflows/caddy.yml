@@ -8,6 +8,7 @@ on:
 env:
   REGISTRY_IMAGE: thehawk970/caddy
   TARGET: caddy
+  TAG: latest
 
 jobs:
   build:
@@ -84,4 +85,4 @@ jobs:
             $(printf '${{ env.REGISTRY_IMAGE }}@sha256:%s ' *)
       - name: Inspect image
         run: |
-          docker buildx imagetools inspect ${{ env.REGISTRY_IMAGE }}:${{ steps.meta.outputs.version }}
+          docker buildx imagetools inspect ${{ env.REGISTRY_IMAGE }}:${{ env.TAG }}
