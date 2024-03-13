@@ -30,7 +30,6 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          target: frankenphp_prod
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
