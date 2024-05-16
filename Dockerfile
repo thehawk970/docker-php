@@ -1,4 +1,4 @@
-FROM dunglas/frankenphp:1-alpine
+FROM dunglas/frankenphp:1-php8.3
 
 WORKDIR /app
 RUN apk add --no-cache \
@@ -22,5 +22,9 @@ RUN set -eux; \
         pdo_pgsql \
         pdo_mysql \
         pdo_sqlite \
+    	gd \
+		imagick \
+		apcu \
+		intl \
+    	redis \
 	;
-
