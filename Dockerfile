@@ -7,10 +7,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	file \
 	gettext \
 	git \
-    python3  \
-    py3-pip  \
-    certbot \
-    vim \
 	;
 
 RUN set -eux; \
