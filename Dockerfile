@@ -1,15 +1,16 @@
 FROM dunglas/frankenphp:1-php8.3
 
 WORKDIR /app
-RUN apk add --no-cache \
-		acl \
-		file \
-		gettext \
-		git \
-    	python3  \
-    	py3-pip  \
-    	certbot \
-        vim \
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	acl \
+	file \
+	gettext \
+	git \
+    python3  \
+    py3-pip  \
+    certbot \
+    vim \
 	;
 
 RUN set -eux; \
