@@ -20,7 +20,6 @@ RUN set -eux; \
         pdo_mysql \
         pdo_sqlite \
     	gd \
-		imagick \
 		apcu \
 		intl \
     	redis \
